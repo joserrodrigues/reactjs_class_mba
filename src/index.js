@@ -5,13 +5,17 @@ import reportWebVitals from "./reportWebVitals";
 import MuiThemes from "./Utils/Common/MuiThemes";
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes/Routes";
+import UserInfoContextProvider from "./Store/UserInfo/UserInfoContextProvider";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <MuiThemes>
       <BrowserRouter>
-        <Routes />
+        <UserInfoContextProvider>
+          <Routes />
+        </UserInfoContextProvider>
       </BrowserRouter>
     </MuiThemes>
   </React.StrictMode>

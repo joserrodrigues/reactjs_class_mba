@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 
@@ -13,10 +13,13 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import useAPI from "../../Services/APIs/Common/useAPI";
 import Person from "../../Services/APIs/Persons/Persons";
+import UserInfoContext from "../../Store/UserInfo/UserInfoContext";
+import Header from "../../Components/Header/Header";
 
 export default function Home() {
   const navigate = useNavigate();
   const [cards, setCards] = useState([]);
+  const context = useContext(UserInfoContext);
 
   const getPersonAPI = useAPI(Person.getPersons);
 
@@ -74,9 +77,10 @@ export default function Home() {
 
   return (
     <Container fixed className="container" maxWidth="lg">
+      <Header />
       <Box className="contentBox">
+        Pessoas relacionadas ao {context.userInfo.userName}
         <Grid container>{cards}</Grid>
-
         <Button onClick={() => goToPage(1)} variant="primary">
           {" "}
           Detail 1
