@@ -2,3 +2,8 @@
     margin-top: 40px;
     text-align: center;
 }
+
+.cardBox {
+    max-width: 345px;
+    margin-top: 15px;
+}
