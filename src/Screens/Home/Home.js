@@ -1,62 +1,160 @@
-import React, { useState, useEffect, useRef } from "react";
-import CustomLabel from "../../Components/CustomLabel/CustomLabel";
-import { useGetRandom } from "../../Components/useGetRandom/useGetRandom";
-import "./Home.css";
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import Grid from "@mui/material/Grid";
 
-const Home = () => {
-  const [count, setCount] = useState(0);
-  const inputRef = useRef(null);
-
-  //Esse useEffect é invocado sempre que há uma renderização do componente
-  useEffect(() => {
-    console.log("Executa na renderização do componente");
-    return () => {
-      console.log("Executa antes de realizar a renderização");
-    };
-  });
-
-  //Esse useEffect é invocado sempre que o componente é montado
-  useEffect(() => {
-    console.log("Executa na montagem do componente");
-    return () => {
-      //Aqui ele é executado na desmontagem do componente
-      console.log("Executa na desmontagem do componente");
-    };
-  }, []);
-
-  //Esse useEffect é invocado sempre que o valor do count é alterado
-  useEffect(() => {
-    console.log("Executa na alteração do information");
-    return () => {
-      console.log(
-        "Executa antes de executar o render ao alterar o valor do information"
-      );
-    };
-  }, [count]);
-
-  const infoRandom = useGetRandom();
+export default function Home() {
   return (
-    <div className="container">
-      <CustomLabel info={count} />
-      <input ref={inputRef} title="teste" />
-      {infoRandom}
-      <p></p>
-      <button
-        onClick={() => {
-          setCount((count) => count + 1);
-        }}
-      >
-        Add Count
-      </button>
-      <button
-        onClick={() => {
-          inputRef.current.focus();
-        }}
-      >
-        Set Focus
-      </button>
-    </div>
-  );
-};
+    <Container maxWidth="xl">
+      <Grid container spacing={2}>
+        <Grid item xs={8} md={6} lg={4} xl={3}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              height="140"
+              image="https://picsum.photos/300/200"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over
+                6,000 species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </Grid>
 
-export default Home;
+        <Grid item xs={8} md={6} lg={4} xl={3}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              height="140"
+              image="https://picsum.photos/300/200"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over
+                6,000 species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </Grid>
+        <Grid item xs={8} md={6} lg={4} xl={3}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              height="140"
+              image="https://picsum.photos/300/200"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over
+                6,000 species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </Grid>
+
+        <Grid item xs={8} md={6} lg={4} xl={3}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              height="140"
+              image="https://picsum.photos/300/200"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over
+                6,000 species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </Grid>
+        <Grid item xs={8} md={6} lg={4} xl={3}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              height="140"
+              image="https://picsum.photos/300/200"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over
+                6,000 species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </Grid>
+
+        <Grid item xs={8} md={6} lg={4} xl={3}>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              height="140"
+              image="https://picsum.photos/300/200"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over
+                6,000 species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Share</Button>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </Grid>
+      </Grid>
+    </Container>
+  );
+}
